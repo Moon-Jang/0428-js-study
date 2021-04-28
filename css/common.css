@@ -1,8 +1,8 @@
 html,
 body {
-    width: 100vw;
+    /* width: 100vw; */
     min-width: 300px;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
 }
 
@@ -157,7 +157,7 @@ header {
     border: 0;
     padding: 8px 0;
 }
-#commentForm > #name {
+#commentForm > #inputName {
     width: 80px;
     border: 1px solid rgb(204, 204, 204);
     border-top-left-radius: 24px;
@@ -166,7 +166,7 @@ header {
     padding-right: 0;
 }
 
-#commentForm > #comment {
+#commentForm > #inputComment {
     flex: 1;
     border: 1px solid rgb(204, 204, 204);
     border-top-right-radius: 24px;
@@ -198,7 +198,7 @@ header {
 .comments-wrap > .comment-wrap > .profile-image {
     width: 48px;
     height: 48px;
-    background-image: url("../assets/둘리.png");
+    background-image: url("../assets/face.svg");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;

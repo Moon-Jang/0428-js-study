@@ -36,11 +36,12 @@
         </div>
         <div class="comments-wrap hide">
             <form id="commentForm">
-                <input type="text" id="name" name="name" placeholder="이름" />
-                <input type="text" id="comment" name="comment" placeholder="내용" />
+                <input type="text" id="inputName" name="name" placeholder="이름" />
+                <input type="text" id="inputComment" name="comment" placeholder="내용" />
                 <button id="sendComment"></button>
             </form>
-            <!-- <div class="comment-wrap">
+            <!-- 
+            <div class="comment-wrap">
                 <div class="profile-image"></div>
                 <div class="name">도우너:</div>
                 <div class="comment">hello</div>
@@ -49,5 +50,58 @@
         </div>
     </div>
     <script src="js/instagram.js"></script>
+    <script type="module">
+        import API from "./js/API.js";
+        //submit 이벤트 제거
+        document.getElementById("commentForm").addEventListener("submit",e => e.preventDefault())
+        let isCommentOpen = false;
+        const commentsWrap = document.querySelector(".comments-wrap");
+        
+        /* 댓글 보기 버튼 로직 */
+        const commentButton = document.getElementById("commentCheck");
+        const handleClickCommentButton = async (event) => {
+            isCommentOpen = !isCommentOpen;
+            //console.log("isCommentOpen",isCommentOpen);
+            commentsWrap.classList.toggle("hide");
+            if ( isCommentOpen ) {
+                /* api 를 통해 댓글 불러온 후 렌더링 */
+                await render();
+            }
+        }
+        commentButton.addEventListener("click",handleClickCommentButton);
+        
+        /* 댓글 쓰기 버튼 로직 */
+        const sendCommentButton = document.getElementById("sendComment");
+        const inputName = document.getElementById("inputName");
+        const inputComment = document.getElementById("inputComment");
+        const sendComment = async (event) => {
+            await API.sendComment(inputName.value,inputComment.value);
+            await render();
+            inputName.value = "";
+            inputComment.value = "";
+        }
+        sendCommentButton.addEventListener("click",sendComment);
+        
+        /* 공통 함수 부분 */
+        async function render() {
+            resetComments(commentsWrap);
+            let commentsData = await API.fetchComments();
+            for ( const data of commentsData ) {
+                const commentElement = document.createElement("div");
+                commentElement.className = "comment-wrap";
+                commentElement.innerHTML = `
+                    <div class="profile-image"></div>
+                    <div class="name">${data.name}:</div>
+                    <div class="comment">${data.comment}</div>
+                    <div class="date"></div>
+                `;
+                commentsWrap.appendChild(commentElement);
+            }
+        }
+        function resetComments(commentsWrap) {
+            commentsWrap.querySelectorAll(".comment-wrap")
+                .forEach( element => element.remove() )
+        }
+    </script>
 </body>
 </html>
