@@ -6,6 +6,9 @@ body {
     margin: 0;
 }
 
+.hide {
+    display: none;
+}
 header {
     margin: 0 16px;
 }
@@ -140,7 +143,6 @@ header {
 }
 
 .comments-wrap {
-    display: none;
     margin-top: 20px;
     border: 1px solid rgb(204, 204, 204);
     border-radius: 8px;
