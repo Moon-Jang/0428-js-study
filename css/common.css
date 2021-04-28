@@ -1,0 +1,215 @@
+html,
+body {
+    width: 100vw;
+    min-width: 300px;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    margin: 0 16px;
+}
+.header-wrap {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 8px 0;
+}
+
+.header-wrap > .title-logo {
+    height: 100%;
+    width: 160px;
+    background-image: url("../assets/title_logo.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contents-wrap {
+    margin: 0 16px;
+}
+.article-wrap {
+    width: 100%;
+    height: 700px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-wrap > .writer-wrap {
+    width: 100%;
+    height: 56px;
+    padding: 12px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-wrap > .writer-wrap > .writer-image {
+    width: 48px;
+    height: 48px;
+    margin-left: 20px;
+    background-image: url("../assets/도우너.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    border: 1px solid rgb(204, 204, 204);
+}
+.article-wrap > .writer-wrap > .writer-name {
+    flex: 1;
+    height: 48px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.article-wrap > .writer-wrap > .writer-name > .name {
+    font-size: 20px;
+    margin: 0;
+}
+
+.article-wrap > .photo-wrap {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    padding: 12px 0;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
+}
+
+.article-wrap > .photo-wrap > .photo {
+    width: 100%;
+    flex: 1;
+    background-image: url("../assets/다정한\ 친구.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 12px;
+}
+
+.article-wrap > .button-wrap {
+    width: 100%;
+    height: 36px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-wrap > .button-wrap > input[type="checkbox"] {
+    display: none;
+}
+
+.article-wrap > .button-wrap > #likeCheck + label {
+    background-image: url("../assets/heart_blank.svg");
+}
+.article-wrap > .button-wrap > #commentCheck + label {
+    background-image: url("../assets/comment.svg");
+    margin-top: 2px;
+}
+
+.article-wrap > .button-wrap > #likeCheck:checked + label {
+    background-image: url("../assets/heart_fill.svg");
+}
+.article-wrap > .button-wrap > #commentCheck:checked + label {
+    fill: gray;
+}
+.article-wrap > .button-wrap > label {
+    width: 30px;
+    height: 30px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 12px;
+}
+.article-wrap > .description-wrap {
+    width: 100%;
+    height: 32px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-wrap > .description-wrap > .description {
+    margin-left: 20px;
+}
+
+.comments-wrap {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#commentForm {
+    display: flex;
+}
+
+#commentForm > input {
+    border: 0;
+    padding: 8px 0;
+}
+#commentForm > #name {
+    width: 80px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    padding-left: 12px;
+    padding-right: 0;
+}
+
+#commentForm > #comment {
+    flex: 1;
+    border: 1px solid rgb(204, 204, 204);
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-left: 0px solid;
+    padding-left: 16px;
+    margin-right: 16px;
+}
+
+#sendComment {
+    width: 32px;
+    height: 32px;
+    background-image: url("../assets/send.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    background-color: white;
+}
+
+.comments-wrap > .comment-wrap {
+    display: flex;
+    height: 64px;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comments-wrap > .comment-wrap > .profile-image {
+    width: 48px;
+    height: 48px;
+    background-image: url("../assets/둘리.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.comments-wrap > .comment-wrap > .name {
+    font-weight: bold;
+    margin-left: 12px;
+}
+
+.comments-wrap > .comment-wrap > .comment {
+    flex: 1;
+    padding-left: 12px;
+}

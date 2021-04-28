@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/common.css">
+    <title>MJ instagram</title>
+</head>
+<body>
+    <header>
+        <div class="header-wrap">
+            <div class="title-logo"></div>
+        </div>
+    </header>
+    <div class="contents-wrap">
+        <div class="article-wrap">
+            <div class="writer-wrap">
+                <div class="writer-image"></div>
+                <div class="writer-name">
+                    <p class="name">elizabeth gilmore</p>
+                </div>
+            </div>
+            <div class="photo-wrap">
+                <div class="photo"></div>
+            </div>
+            <div class="button-wrap">
+                <input type="checkbox" id="likeCheck" />
+                <label for="likeCheck"></label>
+                <input type="checkbox" id="commentCheck" />
+                <label for="commentCheck"></label>
+            </div>
+            <div class="description-wrap">
+                <p class="description"><b>elzabeth glimore:</b> 우리 우정 영원히...</p>
+            </div>
+        </div>
+        <div class="comments-wrap">
+            <form id="commentForm">
+                <input type="text" id="name" name="name" placeholder="이름" />
+                <input type="text" id="comment" name="comment" placeholder="내용" />
+                <button id="sendComment"></button>
+            </form>
+            <!-- <div class="comment-wrap">
+                <div class="profile-image"></div>
+                <div class="name">도우너:</div>
+                <div class="comment">hello</div>
+                <div class="date"></div>
+            </div> -->
+        </div>
+    </div>
+    <script src="js/instagram.js"></script>
+</body>
+</html>
