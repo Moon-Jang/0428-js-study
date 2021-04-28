@@ -1,26 +1,30 @@
-const localStorage_KEY = "comments" 
-const fetchComments = () => {
-    return fetch("../data/comments.json")
-    .then( response => {
-        const data = response.json()
-        localStorage.setItem(localStorage_KEY,data)
-        return data
-    });
+const DATA = [
+    {
+        "idx": 0,
+        "name": "A",
+        "comment": "hello"
+    },
+    {
+        "idx": 1,
+        "name": "B",
+        "comment": "hello world!"
+    }
+]
+const fetchComments = async () => {
+    return DATA
 }
 
-const sendComments = ( name, comment) => {
-    const data = JSON.parse(localStorage.getItem(localStorage_KEY));
+const sendComment = async ( name, comment ) => {
     const newData = {
-        idx: data.length,
+        idx: DATA.length,
         name,
         comment
     } 
-    data.push(newData)
-    localStorage.setItem(localStorage_KEY,data)
-    return data;
+    DATA.push(newData)
+    return DATA;
 }
 
 export default {
     fetchComments,
-    sendComments
+    sendComment
 }
